@@ -43,7 +43,7 @@ def test_make_file_with_mock(mocker):
     mock_file.assert_called_once_with(filename, "w")
 
     # Assert that the file was written to with the expected text.
-    mock_file().write.assert_called_once_with('hello')
+    mock_file().write.assert_called_once_with("hello")
 
     # In this example, we define a create_file function that takes a filename and creates a file with that name,
     # writing the string 'hello world' to the file. We then write a test function test_create_file that calls
@@ -68,7 +68,9 @@ def test_remove_file():
 def test_sleep_for_a_bit_with_mock(mocker):
     mocker.patch("mock_examples.core.time.sleep")
     sleep_for_a_bit(duration=5)
-    time.sleep.assert_called_once_with(5)  # check that time.sleep was called with the correct argument
+    time.sleep.assert_called_once_with(
+        5
+    )  # check that time.sleep was called with the correct argument
 
 
 def test_get_yo_mamma_jokes():
@@ -77,9 +79,16 @@ def test_get_yo_mamma_jokes():
 
 
 def test_get_yo_mamma_jokes_with_mock(mocker):
-    mock_response = {"joke": "Yo mamma so ugly she made One Direction go another direction."}
-    mocker.patch("mock_examples.core.requests.get").return_value.json.return_value = mock_response
+    mock_response = {
+        "joke": "Yo mamma so ugly she made One Direction go another direction."
+    }
+    mocker.patch(
+        "mock_examples.core.requests.get"
+    ).return_value.json.return_value = mock_response
     response = get_yo_mamma_jokes()
     requests.get.assert_called_once_with(
-        "https://api.yomomma.info/")  # check that requests.get was called with the correct URL
-    assert response == mock_response  # check that the result is the expected mock response
+        "https://api.yomomma.info/"
+    )  # check that requests.get was called with the correct URL
+    assert (
+        response == mock_response
+    )  # check that the result is the expected mock response

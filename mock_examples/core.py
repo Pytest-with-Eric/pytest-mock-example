@@ -1,9 +1,7 @@
 import os
 import time
-from typing import Tuple, Any
-
+from typing import Any
 import requests
-from requests import Response
 
 PI = 3.14159
 
