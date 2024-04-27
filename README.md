@@ -1,6 +1,6 @@
 # Pytest Mocking Example
 
-This repo contains the sample code for the article - [How To Mock In Pytest? (A Comprehensive Guide)](https://pytest-with-eric.com/pytest-advanced/pytest-mocking//)
+This repo contains the sample code for the article - [How To Mock In Pytest? (A Comprehensive Guide)](https://pytest-with-eric.com/pytest-advanced/pytest-mocking/)
 
 This project explains how to Mock various objects, functions, classes, Rest API responses and even AWS services with Pytest Mock.
 
