@@ -1,7 +1,7 @@
 import os
 import pytest
+from moto import mock_aws
 import boto3
-from moto import mock_s3
 
 
 @pytest.fixture(scope="function")
@@ -15,6 +15,6 @@ def aws_credentials():
 
 
 @pytest.fixture(scope="function")
-def s3(aws_credentials):
-    with mock_s3():
+def aws_s3(aws_credentials):
+    with mock_aws():
         yield boto3.client("s3", region_name="us-east-1")
