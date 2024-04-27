@@ -6,7 +6,7 @@ def test_get_weather():
     Function to test get weather
     """
     response = get_weather(city="London")
-    print(response)
+    assert type(response) is dict
 
 
 def test_get_weather_mocked(mocker):

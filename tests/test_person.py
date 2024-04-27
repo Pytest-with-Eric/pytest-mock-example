@@ -18,8 +18,7 @@ def test_person_properties(person):
 
 def test_person_class_with_mock(mocker):
     """
-    Test the Person class using a mock for the 'get_person_json' method to ensure it can be replaced with fake data.
-    :param mocker: pytest-mock fixture
+    Test the Person class using a mock for the 'get_person_json' method 
     """
     person = Person(name="Eric", age=25, address="123 Farmville Rd")
     mock_response = {"name": "FAKE_NAME", "age": "FAKE_AGE", "address": "FAKE_ADDRESS"}
